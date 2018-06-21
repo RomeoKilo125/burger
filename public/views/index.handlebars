@@ -1,0 +1,32 @@
+<h1>Peter Peter Burger Eater</h1>
+
+<div class="container" id="grid">
+  <div id="readyBurgers">
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          <div class="burger" id="{{id}}" data-eaten={{devoured}}>
+            {{burger_name}} <button type="btnEat" data-id={{id}}>EAT ME</button>
+          </div>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  <div id="eatenBurgers">
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+          <div class="burger" id="{{id}}" data-eaten={{devoured}}>
+            {{burger_name}} <button type="btnEat" data-id={{id}}>EAT ME</button>
+          </div>
+        {{/unless}}
+      {{/each}}
+    </ul>
+
+  </div>
+  <div id="burgerMaker">
+    <form class="" action="index.html" method="post">
+
+    </form>
+  </div>
+</div>
