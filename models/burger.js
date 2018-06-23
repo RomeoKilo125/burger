@@ -5,7 +5,17 @@ let burger = {
     orm.all('burgers', (res) => {
       cb(res)
     })
+  },
+
+  create: function(keys, values, cb) {
+
+    orm.create('burgers', keys, values, (res) => {
+      cb(res)
+    })
   }
+
+
+
 }
 
 module.exports = burger

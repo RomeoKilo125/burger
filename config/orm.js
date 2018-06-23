@@ -32,13 +32,33 @@ function objToSql(ob) {
 let orm = {
   all: function(tableInput, cb) {
     let queryString = 'SELECT * FROM ' + tableInput + ";"
-    connection.query(queryString, (err, result) =>{
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err
       }
       cb(result)
     })
+  },
+
+  create: function(table, fields, vals, cb) {
+    let queryString = 'INSERT INTO ' + table
+    queryString += ' (' + fields.toString() + ')'
+    queryString += ' VALUES (' + printQuestionMarks(vals.length) + ')'
+    queryString += ';'
+    console.log(queryString);
+
+    connection.query(queryString, vals, (err, result) => {
+      if (err) {
+        throw err
+      }
+      cb(result);
+    })
+
   }
+
+
+
+
 }
 
 
