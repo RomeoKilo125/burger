@@ -6,6 +6,8 @@ $(function() {
     let newBurger = {
       name: $('#burgerName').val().trim()
     }
+    
+    $('#burgerName').val("")
 
     $.ajax('/api/burgers', {
       type: 'POST',
