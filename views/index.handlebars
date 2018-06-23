@@ -17,16 +17,17 @@
       {{#each burgers}}
         {{#if devoured}}
           <div class="burger" id="{{id}}" data-eaten={{devoured}}>
-            {{burger_name}} <button type="btnEat" data-id={{id}}>EAT ME</button>
+            {{burger_name}} <button type="btnMake" data-id={{id}}>EAT ME</button>
           </div>
-        {{/unless}}
+        {{/if}}
       {{/each}}
     </ul>
 
   </div>
   <div id="burgerMaker">
-    <form class="" action="index.html" method="post">
-
+    <form class="form" id='makerForm'>
+      <input type="text" name="burgerName" id='burgerName' value="">
+      <button type="submit" name="btnMakeBurger">Make my burger!</button>
     </form>
   </div>
 </div>
