@@ -1,0 +1,33 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 400px 400px 100px;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(100, 100, 255);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.delete {
+  background-color: rgb(255, 100, 100);
+}
+
+#burgerMaker {
+  grid-column: 1/3;
+  text-align: center;
+}
+
+#burgerName {
+  font-size: 24px;
+  border: solid rgb(100,100,255) 1px;
+}
