@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
     let hbsObject = {
       burgers: data
     }
-    console.log(hbsObject);
     res.render('index', hbsObject)
   })
 })
@@ -20,5 +19,29 @@ router.post('/api/burgers', (req, res) => {
   })
 })
 
+router.put('/api/burgers/:id', (req, res) => {
+  let condition = 'id=' + req.params.id
+  burger.update({
+    devoured: req.body.devoured
+  }, condition, (result) => {
+    if (result.changedRows === 0) {
+      return res.status(404).end()
+    } else {
+      res.status(200).end()
+    }
+  })
+})
+
+router.delete('api/burgers/:id', (req, res) => {
+  let condition = 'id=' + req.params.id
+
+  cat.delete(condition, (result) => {
+    if (result.affectedRows == 0) {
+      return res.status(404).end()
+    } else {
+      res.status(200).end()
+    }
+  })
+})
 
 module.exports = router

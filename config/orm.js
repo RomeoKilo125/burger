@@ -54,10 +54,36 @@ let orm = {
       cb(result);
     })
 
+  },
+
+  update: function(table, update, where, cb) {
+    let queryString = 'UPDATE ' + table
+    queryString += ' SET ' + objToSql(update)
+    queryString += ' WHERE ' + where
+
+    connection.query(queryString, (err, result) => {
+      if (err) {
+        throw err
+      }
+
+      cb(result)
+
+    })
+  },
+
+  delete: function(table, condition, cb) {
+    let queryString = "DELETE FROM "
+    queryString += table
+    queryString += 'WHERE ' + condition
+
+    connection.query(queryString, (err, result) => {
+      if (err) {
+        throw err
+      }
+      cb(result)
+    })
+
   }
-
-
-
 
 }
 

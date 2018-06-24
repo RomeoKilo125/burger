@@ -2,24 +2,26 @@
 
 <div class="container" id="grid">
   <div id="readyBurgers">
+    <h3>Order Up!</h3>
     <ul>
       {{#each burgers}}
         {{#unless devoured}}
-          <div class="burger" id="{{id}}" data-eaten={{devoured}}>
-            {{burger_name}} <button id="btnEat" data-id={{id}}>EAT ME</button>
-            <button id="delete" data-id={{id}}>86<button>
+          <div class="burger" id="{{id}}">
+            {{burger_name}} <button class="btnServeEat" data-id="{{id}}" data-devoured="{{devoured}}">SERVICE!</button>
+            <button class="delete" data-id="{{id}}">86<button>
           </div>
         {{/unless}}
       {{/each}}
     </ul>
   </div>
   <div id="eatenBurgers">
+    <h3>On the Table!</h3>
     <ul>
       {{#each burgers}}
         {{#if devoured}}
-          <div class="burger" id="{{id}}" data-eaten={{devoured}}>
-            {{burger_name}} <button type="btnMake" data-id={{id}}>EAT ME</button>
-            <button id="delete" data-id={{id}}>86<button>
+          <div class="burger" id="{{id}}">
+            {{burger_name}} <button class="btnServeEat" data-id="{{id}}" data-devoured="{{devoured}}">EAT ME</button>
+            <button class="delete" data-id="{{id}}">86<button>
           </div>
         {{/if}}
       {{/each}}
