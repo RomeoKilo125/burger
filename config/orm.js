@@ -74,8 +74,7 @@ let orm = {
   delete: function(table, condition, cb) {
     let queryString = "DELETE FROM "
     queryString += table
-    queryString += 'WHERE ' + condition
-
+    queryString += ' WHERE ' + condition
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err
